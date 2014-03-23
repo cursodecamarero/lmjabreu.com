@@ -235,6 +235,10 @@ pre {
     border-radius: 3px;
 }
 
+pre.lineno {
+    color: $light-text-color;
+}
+
 pre code, tt {
     font-size: inherit;
     white-space: -moz-pre-wrap;
