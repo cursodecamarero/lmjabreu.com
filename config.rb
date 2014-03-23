@@ -23,6 +23,7 @@ activate :blog do |blog|
   # blog.calendar_template = "calendar.html"
 
   blog.paginate = true
+  # set in index.haml
   # blog.per_page = 1
   # blog.page_link = "/:num"
 end
