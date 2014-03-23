@@ -1,0 +1,33 @@
+/* ==========================================================================
+   Table of Contents
+   ========================================================================== */
+
+/*
+    1. Fonts
+    2. Colors
+ */
+
+/* ==========================================================================
+   1. Fonts
+   ========================================================================== */
+$sans-serif-font-family: "jaf-bernino-sans", "Lucida Grande", "Lucida Sans Unicode", "Lucida Sans", "Geneva", "Verdana", sans-serif;
+$serif-font-family: "calluna", Georgia, "Cambria", "Times New Roman", Times, serif;
+$monospace-font-family: Inconsolata, monospace, sans-serif;
+
+/* ==========================================================================
+   2. Colors
+   ========================================================================== */
+$default-background-color: #FFFFFF;
+$darker-background-color: desaturate(darken($default-background-color, 5%), 100%);
+$dark-background-color: desaturate(darken($default-background-color, 10%), 100%);
+$lighter-background-color: lighten($default-background-color, .4%);
+
+$text-color: #333;
+$lighter-text-color: lighten($text-color, 10%);
+$light-text-color: lighten($text-color, 50%);
+
+$link-color: #FF3800;
+$lighter-link-color: lighten($link-color, 30%);
+$link-header-color: $text-color;
+
+$selection-color: desaturate($link-color, 15%);

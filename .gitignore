@@ -1,0 +1,6 @@
+/.bundle
+/.cache
+/build
+/source/post
+.DS_Store
+Gemfile.lock
