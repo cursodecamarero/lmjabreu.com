@@ -9,7 +9,7 @@
     1.  Icons
     2.  General
     3.  Utilities
-    4.  General
+    4.  General (Theme)
     5.  Single Post
     6.  Third Party Elements
     7.  Pagination
@@ -340,8 +340,8 @@ margin on the iframe, cause it breaks stuff. */
 /* Creates a responsive wrapper that makes our content scale nicely */
 .inner {
     position: relative;
-    width: 80%;
-    max-width: 700px;
+    width: $site-width;
+    max-width: $site-max-width;
     margin: 0 auto;
 }
 
@@ -367,6 +367,67 @@ margin on the iframe, cause it breaks stuff. */
     // color: #fff;
     // background: $lighter-background-color no-repeat center center;
     background-size: cover;
+}
+
+.site-head--wrapper {
+    padding-top: 55px;
+}
+
+.site-logo {
+  letter-spacing: .2rem;
+  font-size: 2rem;
+}
+
+.site-logo:first-letter {
+    padding: 0 6px 0 7px;
+    border-radius: 5px;
+    margin-right: 4px;
+    background-color: $link-color;
+    color: $default-background-color;
+    font-family: $serif-font-family;
+}
+
+.site-nav {
+    font-family: $sans-serif-font-family;
+    font-weight: 200;
+    border-bottom: 1px solid $darker-background-color;
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    text-align: left;
+    z-index: 900;
+}
+
+.site-nav a {
+    color: $text-color;
+    display: inline-block;
+    height: 55px;
+    line-height: 55px;
+    border-bottom: transparent 1px solid;
+    margin-bottom: -1px;
+    padding: 0 1rem;
+}
+
+.site-nav a.active {
+    color: $link-color;
+}
+
+.site-nav a.active,
+.site-nav a:hover {
+    text-decoration: none;
+    border-bottom: $link-color 1px solid;
+}
+
+.main-menu {
+    margin: 0;
+    padding: 0;
+    list-style: none;
+    float: right;
+}
+
+.main-menu__item {
+    display: inline-block;
 }
 
 .blog-logo {
@@ -403,8 +464,8 @@ margin on the iframe, cause it breaks stuff. */
 /* Every post, on every page, gets this style on its <article> tag */
 .post {
     position: relative;
-    width:80%;
-    max-width: 700px;
+    width: $site-width;
+    max-width: $site-max-width;
     margin: 4rem auto;
     padding-bottom: 4rem;
     border-bottom: $darker-background-color 1px solid;
@@ -532,6 +593,7 @@ margin on the iframe, cause it breaks stuff. */
 
 /* Pad the header for better spacing */
 .post-template .post-header {
+    margin-top: 55px;
     padding: 60px 0;
     text-align: center;
 }
@@ -666,8 +728,8 @@ margin on the iframe, cause it breaks stuff. */
 /* The main wrapper for our pagination links */
 .pagination {
     position: relative;
-    width: 80%;
-    max-width: 700px;
+    width: $site-width;
+    max-width: $site-max-width;
     margin: 4rem auto;
     font-family: $sans-serif-font-family;
     font-size: 1.3rem;
@@ -876,11 +938,11 @@ margin on the iframe, cause it breaks stuff. */
 }
 
 /* ==========================================================================
-   10. Media Queries - Smaller than 500px
+   10. Media Queries - Smaller than 520px
    ========================================================================== */
 
 
-@media only screen and (max-width: 500px) {
+@media only screen and (max-width: 520px) {
 
     .blog-logo img {
         max-height: 80px;
@@ -903,6 +965,19 @@ margin on the iframe, cause it breaks stuff. */
 
     .site-head {
         padding: 10% 0;
+    }
+
+    .site-nav {
+        position: inherit;
+        text-align: center;
+    }
+
+    .site-nav a.site-logo {
+        margin-bottom: 2rem;
+    }
+
+    .main-menu {
+        float: none;
     }
 
     .blog-title {
