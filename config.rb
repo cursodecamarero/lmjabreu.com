@@ -8,7 +8,7 @@ require 'sanitize'
 
 activate :blog do |blog|
   blog.prefix = "post"
-  # blog.permalink = ":year/:month/:day/:title.html"
+  blog.permalink = "/:title"
   # blog.sources = ":year-:month-:day-:title.html"
   # blog.taglink = "tags/:tag.html"
   # blog.layout = "layout"
@@ -35,6 +35,8 @@ set :blog_description, 'Design and Development'
 set :author_name, 'Luis Abreu'
 set :author_bio, 'Independent Digital Experience Designer and iOS, Web Developer. ' \
                  'Into Cognitive Science, Systems Thinking, Future, Science.'
+set :author_email, 'hello@lmjabreu.com'
+set :author_twitter, 'lmjabreu'
 # Optional
 set :author_location, ''
 set :author_website, ''
@@ -102,6 +104,12 @@ helpers do
     title
   end
 
+  def nav_link_to(link, url, opts={})
+    opts[:class] ||= ""
+    opts[:class] << " active" if url == current_page.url
+    link_to(link, url, opts)
+  end
+
   def page_description
     if is_blog_article?
       Sanitize.clean(current_article.summary(150, '')).strip.gsub(/\s+/, ' ')
@@ -111,7 +119,7 @@ helpers do
   end
 
   def page_class
-    is_blog_article? ? 'post-template' : 'home-template'
+    is_blog_article? ? 'post-template' : 'default-template'
   end
 
   def summary(article)
@@ -130,6 +138,7 @@ helpers do
   def tags?(article = current_article)
     article.tags.present?
   end
+
   def tags(article = current_article, separator = ' | ')
     article.tags.join(separator)
   end
@@ -147,9 +156,11 @@ helpers do
     "https://twitter.com/share?text=#{current_article.title}" \
       "&amp;url=#{current_article_url}"
   end
+
   def facebook_url
     "https://www.facebook.com/sharer/sharer.php?u=#{current_article_url}"
   end
+
   def google_plus_url
     "https://plus.google.com/share?url=#{current_article_url}"
   end
