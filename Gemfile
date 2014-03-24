@@ -4,6 +4,7 @@ source 'http://rubygems.org'
 
 gem 'middleman', '~> 3.2.2'
 gem 'middleman-blog', '~> 3.5.2'
+gem 'middleman-favicon-maker', '~> 3.5'
 gem 'middleman-livereload', '~> 3.2.1'
 
 # For feed.xml.builder

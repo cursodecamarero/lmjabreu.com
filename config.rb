@@ -31,7 +31,7 @@ end
 # Required
 set :blog_url, 'http://lmjabreu.com'
 set :blog_name, 'Luis Abreu'
-set :blog_description, 'UX/UI Designer and Web/iOS Developer'
+set :blog_description, 'Design and Development'
 set :author_name, 'Luis Abreu'
 set :author_bio, 'Independent Digital Experience Designer and iOS, Web Developer. ' \
                  'Into Cognitive Science, Systems Thinking, Future, Science.'
@@ -111,7 +111,7 @@ helpers do
   end
 
   def page_class
-    is_blog_article? ? 'post-template tag-getting-started' : 'home-template'
+    is_blog_article? ? 'post-template' : 'home-template'
   end
 
   def summary(article)
@@ -181,6 +181,15 @@ set :images_dir, 'images'
 configure :build do
   # For example, change the Compass output style for deployment
   activate :minify_css
+
+  # Generate touch and fav icons
+  activate :favicon_maker, :icons => {
+    'images/favicon.png' => [
+      { icon: 'images/apple-touch-icon-144x144-precomposed.png' },
+      { icon: 'images/apple-touch-icon-114x114-precomposed.png' },
+      { icon: 'images/apple-touch-icon-72x72-precomposed.png' }
+    ]
+  }
 
   # Minify Javascript on build
   activate :minify_javascript
