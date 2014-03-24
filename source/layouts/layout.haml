@@ -2,34 +2,31 @@
 %html
   %head
     %title= page_title
-    %meta{charset: 'utf-8'}
-    %meta{name: 'title', content: 'Luis Abreu'}
-    %meta{name: :description, content: page_description}
-    %meta{name: :viewport, content: 'width=device-width, initial-scale=1.0'}
-    %meta{'http-equiv' => 'X-UA-Compatible', content: 'IE=edge'}
-    %meta{name: 'HandheldFriendly', content: 'True'}
-    %meta{name: 'MobileOptimized', content: 320}
+    %meta{ charset: 'utf-8' }
+    %meta{ name: 'title', content: 'Luis Abreu' }
+    %meta{ name: :description, content: page_description }
+    %meta{ name: :viewport, content: 'width=device-width, initial-scale=1.0' }
+    %meta{ 'http-equiv' => 'X-UA-Compatible', content: 'IE=edge' }
+    %meta{ name: 'HandheldFriendly', content: 'True' }
+    %meta{ name: 'MobileOptimized', content: 320 }
     = partial 'partials/twitter_card'
     = partial 'partials/facebook_insights'
     = partial 'partials/opengraph'
     = partial 'partials/google_plus'
-    %link{rel: 'canonical', title: 'http://lmjabreu.com'}
+    %link{ rel: 'canonical', title: 'http://lmjabreu.com' }
     = partial 'partials/touch_icon'
     = favicon_tag 'images/favicon.ico'
     = stylesheet_link_tag :application
     = partial 'partials/typekit'
-  %body{class: page_class}
+  %body{ class: page_class }
 
-    -# TODO
-    -# {{#if @blog.cover}}style="background-image: url({{@blog.cover}})"{{/if}}
-    %header.site-head
-      .vertical
-        .site-head-content.inner
-          - if blog_logo?
-            %a.blog-logo{href: '/'}
-              = image_tag blog_logo, alt: 'Blog Logo'
-          %h1.blog-title= blog_name
-          %h2.blog-description= blog_description
+    %nav.site-nav{ role: 'navigation' }
+      .inner.clearfix
+        = nav_link_to blog_name, '/', { class: 'site-logo' }
+        %ul.main-menu
+          %li.main-menu__item= nav_link_to 'Work', '/work', { class: 'vertical' }
+          %li.main-menu__item= nav_link_to 'About', '/about', { class: 'vertical' }
+          %li.main-menu__item= nav_link_to 'Contact', '/contact', { class: 'vertical' }
 
     - if is_blog_article?
       = partial 'layouts/post', locals: { content: yield }
@@ -45,8 +42,8 @@
           = Time.now.year
           = blog_name
         %section.footer-contact
-          = link_to "twitter", 'https://twitter.com/lmjabreu'
+          = link_to 'twitter', 'https://twitter.com/' + author_twitter
           &bull;
-          = link_to "email", 'mailto:hello@lmjabreu.com'
+          = link_to 'email', 'mailto:' + author_email
 
     = javascript_include_tag :application
