@@ -2,16 +2,34 @@
 %html
   %head
     %title= page_title
-    %meta{name: :description, content: page_description}
     %meta{charset: 'utf-8'}
+    %meta{name: 'title', content: 'Luis Abreu'}
+    %meta{name: :description, content: page_description}
     %meta{name: :viewport, content: 'width=device-width, initial-scale=1.0'}
     %meta{'http-equiv' => 'X-UA-Compatible', content: 'IE=edge'}
     %meta{name: 'HandheldFriendly', content: 'True'}
     %meta{name: 'MobileOptimized', content: 320}
+    = partial 'partials/twitter_card'
+    = partial 'partials/facebook_insights'
+    = partial 'partials/opengraph'
+    = partial 'partials/google_plus'
+    %link{rel: 'canonical', title: 'http://lmjabreu.com'}
+    = partial 'partials/touch_icon'
     = favicon_tag 'images/favicon.ico'
     = stylesheet_link_tag :application
-    = partial 'layouts/typekit'
+    = partial 'partials/typekit'
   %body{class: page_class}
+
+    -# TODO
+    -# {{#if @blog.cover}}style="background-image: url({{@blog.cover}})"{{/if}}
+    %header.site-head
+      .vertical
+        .site-head-content.inner
+          - if blog_logo?
+            %a.blog-logo{href: '/'}
+              = image_tag blog_logo, alt: 'Blog Logo'
+          %h1.blog-title= blog_name
+          %h2.blog-description= blog_description
 
     - if is_blog_article?
       = partial 'layouts/post', locals: { content: yield }
