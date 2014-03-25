@@ -378,15 +378,6 @@ margin on the iframe, cause it breaks stuff. */
   font-size: 2rem;
 }
 
-.site-logo:first-letter {
-    padding: 0 6px 0 7px;
-    border-radius: 5px;
-    margin-right: 4px;
-    background-color: $link-color;
-    color: $default-background-color;
-    font-family: $serif-font-family;
-}
-
 .site-nav {
     font-family: $sans-serif-font-family;
     font-weight: 200;
