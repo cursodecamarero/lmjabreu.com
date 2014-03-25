@@ -6,6 +6,8 @@ gem 'middleman', '~> 3.2.2'
 gem 'middleman-blog', '~> 3.5.2'
 gem 'middleman-favicon-maker', '~> 3.5'
 gem 'middleman-livereload', '~> 3.2.1'
+gem "rb-inotify"
+gem "therubyracer"
 
 # For feed.xml.builder
 gem 'builder', '~> 3.2.2'
