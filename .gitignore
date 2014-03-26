@@ -2,5 +2,6 @@
 /.cache
 /build
 /source/post
+/source/page
 .DS_Store
 Gemfile.lock
