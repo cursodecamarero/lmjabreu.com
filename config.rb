@@ -183,7 +183,7 @@ activate :directory_indexes
 # activate :livereload
 
 # Middleman Alias - https://github.com/Octo-Labs/middleman-alias
-activate :alias
+# activate :alias
 
 set :css_dir, 'stylesheets'
 
