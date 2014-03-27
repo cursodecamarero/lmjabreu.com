@@ -182,8 +182,7 @@ activate :directory_indexes
 # LiveReload - http://middlemanapp.com/livereload/
 # activate :livereload
 
-# Middleman Alias - https://github.com/Octo-Labs/middleman-alias
-# activate :alias
+activate :pages_directory
 
 set :css_dir, 'stylesheets'
 
