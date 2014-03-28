@@ -119,7 +119,11 @@ helpers do
   end
 
   def page_class
-    is_blog_article? ? 'post-template' : 'default-template'
+    page_class = 'default-template'
+    page_class = 'post-template' if is_blog_article?
+    page_class = 'page-template' if is_page?
+
+    page_class
   end
 
   def summary(article)
