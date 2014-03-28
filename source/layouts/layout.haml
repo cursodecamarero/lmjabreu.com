@@ -30,6 +30,8 @@
 
     - if is_blog_article?
       = partial 'layouts/post', locals: { content: yield }
+    - elsif is_page?
+      = partial 'layouts/page', locals: { content: yield }
     - else
       = yield
 
