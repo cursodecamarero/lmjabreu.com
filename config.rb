@@ -106,7 +106,7 @@ helpers do
 
   def nav_link_to(link, url, opts={})
     opts[:class] ||= ""
-    opts[:class] << " active" if url == current_page.url
+    opts[:class] << " active" if url == current_page.url.gsub(/\b(\/)$/, '')
     link_to(link, url, opts)
   end
 
