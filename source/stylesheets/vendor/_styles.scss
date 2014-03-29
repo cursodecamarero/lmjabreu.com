@@ -6,17 +6,22 @@
 
 /*
 
-    1.  Icons
-    2.  General
-    3.  Utilities
-    4.  General (Theme)
-    5.  Single Post
-    6.  Third Party Elements
-    7.  Pagination
-    8.  Footer
-    9.  Media Queries (Tablet)
+    1. Icons
+    2. General
+    3. Utilities
+    4. General (Theme)
+    5. Single Post
+    6. Third Party Elements
+    7. Pagination
+    8. Footer
+    9. Media Queries (Tablet)
     10. Media Queries (Mobile)
 
+ */
+
+/*
+    TODO: major cleanup, this separation into 'Single Post' is really silly,
+          needs proper elements such as lists, buttons and such
  */
 
 /* ==========================================================================
@@ -419,7 +424,7 @@ margin on the iframe, cause it breaks stuff. */
 }
 
 /* Every post or page, gets this style on its <article> tag */
-.site-content article,
+.page,
 .post {
     position: relative;
     width: $site-width;
@@ -431,6 +436,7 @@ margin on the iframe, cause it breaks stuff. */
     hyphens: auto;
 }
 
+.page p,
 .post p {
     color: $lighter-text-color;
 }
@@ -453,10 +459,12 @@ margin on the iframe, cause it breaks stuff. */
     box-shadow: #fff 0 0 0 5px;
 }
 
+.page-title,
 .post-title {
     margin:0;
 }
 
+.page-title a,
 .post-title a {
     text-decoration: none;
 }
@@ -533,11 +541,13 @@ margin on the iframe, cause it breaks stuff. */
 
 /* Stop .full-img from creating horizontal scroll - slight hack due to
    imperfections with browser width % calculations and rounding */
+.page-template .site-content,
 .post-template .site-content {
     overflow: hidden;
 }
 
 /* Tweak the .post wrapper style */
+.page-template .page,
 .post-template .post {
     margin-top: 0;
     border-bottom: none;
@@ -550,17 +560,20 @@ margin on the iframe, cause it breaks stuff. */
 }
 
 /* Pad the header for better spacing */
+.page-template .page-header,
 .post-template .post-header {
     padding: 60px 0;
     text-align: center;
 }
 
+.page-template .blog-title,
 .post-template .blog-title {
     display: inline-block;
     padding: 2.5rem 0;
 }
 
 /* Keep images centered and within the bounds of the post-width */
+.page-content img,
 .post-content img {
     display: block;
     max-width: 100%;
@@ -571,6 +584,7 @@ margin on the iframe, cause it breaks stuff. */
 
 /* Break out larger images to be wider than the main text column,
    needs to be applied via JS */
+.page-content .full-img,
 .post-content .full-img {
     width: 126%;
     max-width: none;
@@ -691,11 +705,13 @@ margin on the iframe, cause it breaks stuff. */
         line-height: 1.5em;
     }
 
+    .page,
     .post {
         font-size: 0.9em;
         line-height: 1.6em;
     }
 
+    .page-template .page,
     .post-template .post {
         padding-bottom: 1rem;
     }
@@ -737,6 +753,7 @@ margin on the iframe, cause it breaks stuff. */
         margin-right: 16px;
     }
 
+    .page,
     .post {
         width:auto;
         margin-left: 16px;
@@ -784,18 +801,22 @@ margin on the iframe, cause it breaks stuff. */
         font-size: 2.3rem;
     }
 
+    .page-template .page,
     .post-template .post {
         padding-bottom: 0;
     }
 
+    .page-template .page-header,
     .post-template .post-header {
         padding: 30px 0;
     }
 
+    .page-content img,
     .post-content img {
         padding: 0;
     }
 
+    .page-content .full-img,
     .post-content .full-img {
         width: auto;
         /* expand with to image + margins */
