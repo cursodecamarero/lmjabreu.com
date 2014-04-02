@@ -18,6 +18,7 @@
     = favicon_tag 'images/favicon.ico'
     = stylesheet_link_tag :application
     = partial 'partials/typekit'
+    = partial 'partials/analytics'
   %body{ class: page_class }
 
     %nav.site-nav{ role: 'navigation' }
@@ -49,4 +50,3 @@
           = link_to 'email', 'mailto:' + author_email
 
     = javascript_include_tag :application
-    = partial 'partials/analytics'
