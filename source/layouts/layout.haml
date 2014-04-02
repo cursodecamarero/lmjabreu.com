@@ -22,7 +22,7 @@
 
     %nav.site-nav{ role: 'navigation' }
       .inner.clearfix
-        = nav_link_to blog_name, '/', { class: 'site-logo' }
+        = nav_link_to author_name, '/', { class: 'site-logo' }
         %ul.main-menu
           %li.main-menu__item= nav_link_to 'Work', '/work', { class: 'vertical' }
           %li.main-menu__item= nav_link_to 'About', '/about', { class: 'vertical' }
@@ -42,7 +42,7 @@
         %section.copyright
           &copy;
           = Time.now.year
-          = blog_name
+          = author_name
         %section.footer-contact
           = link_to 'twitter', 'https://twitter.com/' + author_twitter
           &bull;

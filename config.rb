@@ -30,8 +30,8 @@ end
 
 # Required
 set :blog_url, 'http://lmjabreu.com'
-set :blog_name, 'Luis Abreu'
-set :blog_description, 'Design and Development'
+set :blog_name, 'UX & UI Designer.'
+set :blog_description, 'the thoughts of'
 set :author_name, 'Luis Abreu'
 set :author_bio, 'Independent Digital Experience Designer and iOS, Web Developer. ' \
                  'Into Cognitive Science, Systems Thinking, Future, Science.'
@@ -95,7 +95,7 @@ end
 
 helpers do
   def page_title
-    title = blog_name.dup
+    title = author_name.dup
     if current_page.data.title
       title << ": #{current_page.data.title}"
     elsif is_blog_article?
