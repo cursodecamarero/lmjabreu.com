@@ -437,6 +437,11 @@ margin on the iframe, cause it breaks stuff. */
     hyphens: auto;
 }
 
+.page h2,
+.post h2 {
+    text-align: center;
+}
+
 .page p,
 .post p {
     color: $lighter-text-color;
