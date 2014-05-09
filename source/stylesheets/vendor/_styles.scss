@@ -437,8 +437,8 @@ margin on the iframe, cause it breaks stuff. */
     hyphens: auto;
 }
 
-.page h2,
-.post h2 {
+.page-template .page h2,
+.post-template .post h2 {
     text-align: center;
 }
 
