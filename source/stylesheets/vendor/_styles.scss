@@ -449,7 +449,7 @@ margin on the iframe, cause it breaks stuff. */
 
 .page iframe,
 .post iframe {
-   margin: 1.6em auto;
+   margin: 1.6em auto !important;
 }
 
 .page-title,
