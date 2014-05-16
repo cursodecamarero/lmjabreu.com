@@ -447,6 +447,11 @@ margin on the iframe, cause it breaks stuff. */
     color: $lighter-text-color;
 }
 
+.page iframe,
+.post iframe {
+   margin: 1.6em auto;
+}
+
 .page-title,
 .post-title {
     margin:0;
