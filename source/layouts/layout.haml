@@ -14,7 +14,7 @@
     = partial 'partials/opengraph'
     = partial 'partials/google_plus'
     %link{ rel: 'canonical', title: 'http://lmjabreu.com' }
-    = feed_tag :atom, "#{blog.options.prefix.to_s}/feed.xml", title: 'Atom Feed'
+    = feed_tag :atom, "/feed.xml", title: 'Luis Abreu'
     = partial 'partials/touch_icon'
     = favicon_tag 'images/favicon.ico'
     = stylesheet_link_tag :application
